@@ -1,0 +1,16 @@
+.vscode
+dist
+build
+*.egg-info/
+*.egg
+MANIFEST
+
+.ipynb_checkpoints
+*.pyc
+__pycache__/
+.env
+.venv
+env/
+venv/
+.toml
+toml

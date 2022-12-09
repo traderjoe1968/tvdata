@@ -1,0 +1,37 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "TVData"
+version = "0.0.1"
+authors = [
+  { name="Joe Trader", email="traderjoe1968@gmail.com" },
+]
+description = "TradingView data downloader"
+keywords = ["TradingView", "Stock", "Data", "History"]
+readme = "README.md"
+requires-python = ">=3.7"
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+dependencies = [
+  "pandas",
+  "websocket-client",
+  "requests",
+  "toml",
+]
+
+[project.optional-dependencies]
+test = [
+  "pytest",
+  "pytest-cov[all]",
+]
+
+[project.urls]
+Homepage = "https://github.com/traderjoe1968/tvdata"
+repository = "https://github.com/traderjoe1968/tvdata.git"
+"Bug Tracker" = "https://github.com/traderjoe1968/metastock/issues"
