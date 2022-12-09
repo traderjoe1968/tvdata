@@ -23,6 +23,7 @@ dependencies = [
   "websocket-client",
   "requests",
   "toml",
+  "appdirs",
 ]
 
 [project.optional-dependencies]
