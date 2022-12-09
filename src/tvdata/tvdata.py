@@ -178,7 +178,7 @@ class TvDatafeed:
 
             for xi in x:
                 xi = re.split("\[|:|,|\]", xi)
-                ts = datetime.datetime.fromtimestamp(float(xi[4]))
+                ts = datetime.datetime.utcfromtimestamp(float(xi[4]))
 
                 row = [ts]
 
@@ -255,6 +255,7 @@ class TvDatafeed:
 
             self.__send_message("set_auth_token", [self.token])
             self.__send_message("chart_create_session", [self.chart_session, ""])
+            self.__send_message("switch_timezone", [self.chart_session, "exchange"])
             self.__send_message("quote_create_session", [self.session])
             self.__send_message(
                 "quote_set_fields",
@@ -304,12 +305,8 @@ class TvDatafeed:
                     + "}",
                 ],
             )
-            self.__send_message(
-                "create_series",
-                [self.chart_session, "s1", "s1", "symbol_1", interval, n_bars],
-            )
-            self.__send_message("switch_timezone", [
-                                self.chart_session, "exchange"])
+                           
+            self.__send_message("create_series", [self.chart_session, "s1", "s1", "symbol_1", interval, n_bars],)
 
             raw_data = ""
 
